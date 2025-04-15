@@ -29,7 +29,7 @@ describe('Login', () => {
         password: 'test-qa',
       })
       .catch((err) => err.response);
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message.join()).toContain('E-mail inválido');
   });
   it('4- deve falhar com e-mail vazio', async () => {
@@ -39,7 +39,7 @@ describe('Login', () => {
         password: 'test-qa',
       })
       .catch((err) => err.response);
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message.join()).toContain('E-mail inválido');
   });
   it('5- deve falhar com senha vazia', async () => {
@@ -49,7 +49,7 @@ describe('Login', () => {
         password: '',
       })
       .catch((err) => err.response);
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message).toContain('Preencha o campo senha');
   });
   it('6- deve falhar com senha em tipo incorreto (booleano)', async () => {
@@ -60,7 +60,7 @@ describe('Login', () => {
       })
       .catch((err) => err.response);
 
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message.join()).toContain('Senha deve ser uma string');
   });
   it('7- deve falhar ao omitir o campo mail', async () => {
@@ -69,7 +69,7 @@ describe('Login', () => {
         password: 'test-qa',
       })
       .catch((err) => err.response);
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message.join()).toContain('E-mail inválido');
   });
   it('8- deve falhar ao omitir o campo password', async () => {
@@ -78,7 +78,7 @@ describe('Login', () => {
         mail: 'qa@raffinato.com',
       })
       .catch((err) => err.response);
-    expect(res.status).toBe(422); // corrigido
+    expect(res.status).toBe(422); 
     expect(res.data.message).toContain('Preencha o campo senha');
   });
   it('9- deve falhar ao enviar payload vazio', async () => {

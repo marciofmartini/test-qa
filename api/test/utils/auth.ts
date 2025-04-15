@@ -7,7 +7,7 @@ export const getToken = async (): Promise<string> => {
     return cachedToken;
   }
 
-  // Caso cachedToken ainda seja null, vamos buscar o token
+  
   const res = await axios.post('http://localhost:3000/user/login', {
     mail: 'qa@raffinato.com', // ✅ corrigido aqui
     password: 'test-qa',
@@ -15,7 +15,7 @@ export const getToken = async (): Promise<string> => {
 
   cachedToken = res.data.token;
 
-  // Garantir que estamos retornando um string e não um null
+ 
   if (!cachedToken) {
     throw new Error('Token não encontrado');
   }
